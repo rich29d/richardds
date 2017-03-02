@@ -1,0 +1,131 @@
+@cor-lar: #aa3917;
+@cor-bra: #fff;
+
+@cor-cin-cla: #666;
+@cor-cin: #323232;
+@cor-cin-esc: #262626;
+
+@img: '../img';
+
+.sec-skills
+{
+    margin-right: -18px;
+
+    .cont-itens
+    {
+        margin: 0 auto;
+        width: 90%;
+
+        .item
+        {
+            float: left;
+            width: 25%;
+
+            .skill
+            {
+              margin: 10%;
+              width: 80%;
+              background: #262626;
+              border-radius: 5px;
+              padding-top: 60%;
+
+                /*--------------------Frente*/
+
+                .skill-capa{
+                  border-radius: 5px;
+                  background: @cor-cin;
+                  transition: all .3s ease;
+
+                  .skill-logo-img{
+                    height: 65%;
+                    width: 80%;
+                    margin: 5% 10%;
+                    background: transparent center center no-repeat;
+                    background-size: contain;
+                    transition: all .5s ease;
+                  }//skill-logo-img
+
+                  .skill-logo-txt{
+                    font-family: kenian, sans-serif;
+                    color: @cor-cin-cla;
+                    height: auto;
+                    width: 100%;
+                  }//skill-logo-txt
+
+                }//skill-capa
+
+                /*--------------------fundo*/
+
+                .skill-level{
+                  overflow: hidden;
+
+                  .tabela{
+                    height: 100%;
+                    margin: auto;
+                  }
+
+                  .levels{
+                    margin: auto;
+                    height: 20%;
+                    top: auto;
+                    bottom: 0;
+
+                    .lvl{
+                      width: 12px;
+                      height: 12px;
+                      border-radius: 50%;
+                      background: #323232;
+                      margin: 0 5px;
+                      top: 50px;
+                      float: left;
+                      cursor: pointer;
+                      transition: all .5s ease;
+
+                      &.active{ background: #aa3917; }
+
+                      /*
+                      * Aplica atributo de valor crescente á seletor
+                      * @s (string) - seletor;
+                      * @a (string) - atrbuto;
+                      * @i (int) - valor inicial;
+                      * @f (int > @i) - valor final;
+                      */
+
+                      .for(@i:1) when (@i <= 5) {
+                          @tmp : @i+3;
+                          &.lvl-@{i}{ transition: ~'all .@{tmp}s ease'}
+                          .for((@i+1));
+                      }
+                      .for();
+
+                    }//lvl
+
+                  }//levels
+
+                }//skill-level
+
+                /*--------------------Skill:hiver*/
+
+                &:hover{
+                  .skill-capa{
+                    height: 80%;
+
+                    .skill-logo-img{
+                      height: 82.5%;
+                      margin-top: -10%;
+                    }//skill:hover skill-logo-img
+
+                  }//skill:hover skill-capa
+
+                  .skill-level{
+                    .levels{
+                      .lvl{ top: 0; }
+                    }//skill:hover skill-level
+                  }//skill:hover levels
+
+                }//skill:hover
+
+            }//skill
+        }//item
+    }//cont-itens
+}//sec-skills

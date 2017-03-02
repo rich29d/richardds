@@ -1,0 +1,132 @@
+@cor-web: #673ab7;
+@cor-logo: #4caf50;
+@cor-impresso: #3a60b7;
+@img: "../img";
+
+.sec-works{
+
+  background: url("@{img}/bg-sec-works.png") top center no-repeat;
+  background-size: 100% auto;
+  display: inline-block;
+  width: 100%;
+  padding-left: 18px;
+
+  .cont-itens{
+    margin: auto;
+    margin-top: 100px;
+    width: 80%;
+
+    .item{
+      width: 33.33%;
+      float: left;
+
+      .item-work{
+        width: 90%;
+        margin: 5%;
+
+        .item-img{
+            padding-top: 55%;
+            background: center center no-repeat #323232;
+            background-size: cover;
+            transition: background .5s ease;
+        }
+
+      }
+
+      .item-tipo{
+        display: inline-block;
+        padding: 2px 5px;
+        font-size: 13px;
+
+        &.item-tipo-web{
+          background: @cor-web;
+          .seta{background: @cor-web }
+        }
+        &.item-tipo-logo{
+          background: @cor-logo;
+          .seta{background: @cor-logo }
+        }
+        &.item-tipo-impresso{
+          background: @cor-impresso;
+          .seta{background: @cor-impresso }
+        }
+
+        .cont-seta{
+          overflow: hidden;
+          top: 100%;
+
+          .seta{
+            width: 15px;
+            height: 15px;
+            transform: rotate(45deg);
+            margin: -7.5px 0 0 -7.5px;
+          }
+
+        }
+
+      }
+
+      .item-pnl{
+        &.tabela{
+          width: 100%;
+          color: #666;
+          font-weight: bold;
+          i{ font-weight: normal; }
+          .celula{
+            padding: 8px 0;
+            transition: color .5s ease;
+
+            &:hover{ color: #FFF; }
+
+            &.item-pnl-count-views{
+              background: #3a3a3a;
+              cursor: default;
+            }
+            &.item-pnl-count-likes{
+              background: #353535;
+              cursor: pointer;
+              i{ color: #d14444; }
+            }
+            &.item-pnl-link{ background: #323232;
+            cursor: pointer;
+           }
+          }
+        }
+      }
+
+      .item-desc{
+        top:auto;
+        height: 0;
+        background: #323232;
+        color: #666;
+        font-size: 15px;
+        overflow: hidden;
+        transition: height .5s ease;
+
+        .item-desc-cont{
+          padding: 15px;
+          box-sizing: border-box;
+          top: auto;
+          bottom: 0;
+          height: auto;
+        }
+
+        .item-desc-tit{ font-weight: bold; }
+        .item-desc-txt{ margin: 9px 0; }
+        .item-desc-lnk{
+          color: #666;
+          text-align: right;
+          text-decoration: none;
+        }
+
+      }
+
+      &:hover{
+        .item-desc{ height: 100px; }
+      }
+
+    }
+
+  }
+
+}
